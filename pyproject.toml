@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latent-bus"
+version = "0.1.0"
+description = "A minimal, reproducible demo of activation-space fact injection in a transformer language model."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Larry Richards" },
+]
+keywords = ["transformers", "interpretability", "activation-patching", "steering-vectors"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.3,<3.0",
+    "transformers>=4.44,<5.0",
+    "numpy>=1.26,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.urls]
+Repository = "https://github.com/lbrichards/myelin-latent-bus"
+
+[project.scripts]
+latent-bus-prepare = "latent_bus.cli:prepare_main"
+latent-bus-demo = "latent_bus.cli:demo_main"
+latent-bus-probe = "latent_bus.cli:probe_main"
+latent-bus-baseline = "latent_bus.cli:baseline_main"
+latent-bus-aligned-patch = "latent_bus.cli:aligned_patch_main"
+latent-bus-cache-payloads = "latent_bus.cli:cache_payloads_main"
+latent-bus-patch-suite = "latent_bus.cli:train_suite_main"
+latent-bus-train-payload = "latent_bus.cli:train_payload_main"
+latent-bus-train-suite = "latent_bus.cli:train_suite_main"
+latent-bus-fact-probe = "latent_bus.cli:fact_probe_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"

@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Model weights — never commit
+*.safetensors
+*.bin
+*.gguf
+*.pt
+models/
+
+# Demo outputs (reproducible from CLI)
+examples/aligned_patch*/
+examples/kinship_baseline*/
+examples/patched_suite*/
+examples/payload_*/
+examples/**/*.csv
+examples/**/*.jsonl
+examples/**/*.npy
+examples/**/*manifest.json
+examples/**/payload_result.json
+examples/**/payload_train_trace.csv
+examples/*/results/
+examples/*/logs/
+examples/*/vectors/
+examples/*/run_manifest.json
+examples/*/prepare_metadata.json
+examples/kinship/report.md
+
+# Draft manuscripts
+docs/anthropic_submission.tex

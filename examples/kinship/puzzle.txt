@@ -1,0 +1,15 @@
+DEFINITIONS:
+Let Parent(X,Y) mean "X is a parent of Y."
+Let Sibling(X,Y) mean "X and Y share at least one parent and X != Y."
+Let Cousin(X,Y) mean "exists A,B: Parent(A,X) and Parent(B,Y) and Sibling(A,B) and X != Y."
+Let Father(X,Y) mean "X is male and Parent(X,Y)."  From Father(X,Y) infer Parent(X,Y).
+
+INSTRUCTION: Use the definitions and facts to answer the question.
+Answer with only a NAME. No explanation.
+
+FACTS:
+- Paul and Mary are the parents of Bob and Carol.
+- Bob and Carol are siblings.
+- Carol is the mother of Nancy.
+- Bob is the father of Joe.
+- Joe and Nancy exist in the family.
